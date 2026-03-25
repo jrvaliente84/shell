@@ -9,4 +9,8 @@ export const routes: Routes = [
       // O si el MFE1 expone rutas:
       // loadChildren: () => loadRemoteModule('mfe1', './Routes').then(m => m.routes)
   },
+  {
+    path: 'demo',
+    loadComponent: () => import('./demo/demo').then(m => m.Demo)
+  },
 ];
