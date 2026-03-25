@@ -1,0 +1,308 @@
+  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Geist:wght@400;500;600;700&display=swap');
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  :host {
+    /* Design System: Refined Dark Brutalism with Warm Accents */
+    --color-bg-primary: #0a0a0a;
+    --color-bg-secondary: #1a1a1a;
+    --color-bg-tertiary: #2d2d2d;
+    --color-text-primary: #f5f5f5;
+    --color-text-secondary: #a0a0a0;
+    --color-text-tertiary: #6d6d6d;
+    --color-accent: #d4af37;
+    --color-accent-light: #e8c547;
+    --color-accent-dark: #b8941f;
+
+    --font-display: 'Space Mono', monospace;
+    --font-body: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+    --space-xs: 0.5rem;
+    --space-sm: 0.75rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+
+    --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    font-family: var(--font-body);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: block;
+    min-height: 100dvh;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--color-accent);
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    color: var(--color-text-primary);
+  }
+
+  p {
+    margin: 0;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+
+  main {
+    padding: var(--space-sm) var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: var(--space-3xl);
+    align-items: flex-start;
+    position: relative;
+    animation: fadeInUp var(--transition-slow);
+  }
+
+
+  .angular-logo {
+    max-width: 9.2rem;
+  }
+
+  .content {
+    gap: 2rem;
+    width: 100%;
+    margin: 0;
+    align-items: center;
+    .left-side {
+      animation: slideInLeft var(--transition-slow);
+      max-width: 300px;
+    }
+  }
+
+  .content h1 {
+    margin: 0 0 1.5rem 0;
+  }
+
+  .content p {
+    margin-top: 1rem;
+  }
+
+  .divider {
+    width: 2px;
+    height: 80px;
+    background: linear-gradient(180deg, var(--color-accent) 0%, transparent 100%);
+    margin: 0;
+  }
+
+  .pill-group {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    border: 2px solid var(--color-accent);
+    border-radius: 2px;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-family: var(--font-display);
+    cursor: pointer;
+    color: var(--color-accent);
+    background: transparent;
+    transition: all var(--transition-base);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+
+  .pill:hover {
+    background: var(--color-accent);
+    color: var(--color-bg-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+  }
+
+  .pill:active {
+    transform: translateY(0);
+  }
+
+  .pill svg {
+    width: 16px;
+    height: 16px;
+    margin-left: 0.5rem;
+  }
+
+  .social-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--color-accent);
+    border-radius: 2px;
+    color: var(--color-accent);
+    transition: all var(--transition-base);
+  }
+
+  .social-links a:hover {
+    background: var(--color-accent);
+    color: var(--color-bg-primary);
+    transform: translateY(-2px);
+  }
+
+  .social-links path {
+    transition: fill var(--transition-base);
+    fill: currentColor;
+  }
+
+  /* Navigation Styles */
+  .main-nav {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 2px solid var(--color-accent);
+    margin-bottom: 2rem;
+    animation: slideInLeft var(--transition-slow);
+  }
+
+  .app-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    letter-spacing: 0.05em;
+    margin: 0;
+  }
+
+  .nav-links {
+    margin-left: 50px;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .nav-link {
+    position: relative;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--color-text-secondary);
+    transition: color var(--transition-base);
+    padding-bottom: 0.5rem;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-accent);
+    transition: width var(--transition-base);
+  }
+
+  .nav-link:hover {
+    color: var(--color-text-primary);
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .nav-link.active {
+    color: var(--color-text-primary);
+  }
+
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  .nav-link-primary {
+    border: 2px solid var(--color-accent);
+    padding: 0.5rem 1.25rem;
+    border-radius: 2px;
+  }
+
+  .nav-link-primary::after {
+    display: none;
+  }
+
+  .nav-link-primary:hover {
+    background: var(--color-accent);
+    color: var(--color-bg-primary);
+    transform: translateY(-2px);
+  }
+
+  .nav-link-primary.active {
+    background: var(--color-accent);
+    color: var(--color-bg-primary);
+  }
+
+  @media screen and (max-width: 768px) {
+    main {
+      padding: 2rem 1rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .content {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      max-width: 100%;
+    }
+
+    .divider {
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--color-accent) 0%, transparent 100%);
+    }
+  }
